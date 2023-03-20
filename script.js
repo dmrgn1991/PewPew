@@ -1004,6 +1004,8 @@ setInterval(function () {
                 i--;
             }
             if (enemies[i] && enemies[i].y > gameHeight){
+                svg.removeChild(enemies[i].sprite);
+                svg.removeChild(enemies[i].base);                
                 enemies.splice(i, 1);
                 i--;
             }
