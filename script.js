@@ -238,6 +238,9 @@ function initialize() {
     scoreCounter = document.getElementById("score");
     hiScoreCounter = document.getElementById("hiScore");
 
+    scoreCounter.innerHTML = "Score: " + score;
+    hiScoreCounter.innerHTML = "Hi Score:" + hiScore;
+
     svg.addEventListener("click", (event) => {
         if (event.target == svg && state == 0) {
             svg.requestPointerLock();
@@ -1033,6 +1036,8 @@ setInterval(function () {
 
             }
         }
+        scoreCounter.innerHTML = "Score: " + score;
+        hiScoreCounter.innerHTML = "Hi Score:" + hiScore;
     }
 
     for (let powerUp = 0; powerUp < powerUps.length; powerUp++) {
@@ -1075,8 +1080,7 @@ setInterval(function () {
     if (shield > 0) {
         shield--;
     }
-    scoreCounter.innerHTML = "Score: " + score;
-    hiScoreCounter.innerHTML = "Hi Score:" + hiScore;
+    
 
 }, 16.67); // 60 ticks per second
 
